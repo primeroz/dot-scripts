@@ -8,7 +8,7 @@
 
 pkg.link() {
     # Link package into ~/.scripts
-    fs.link_file $PKG_PATH
+    fs.link_file "$PKG_PATH"
 }
 
 ##############################################################################
