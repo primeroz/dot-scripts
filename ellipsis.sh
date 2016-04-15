@@ -40,6 +40,9 @@ pkg.pull(){
     # Update dot-i3 repo
     git.pull
 
+    # Re Link as needed
+    pkg.link
+
     # Update the config file
     #$PKG_PATH/compile.sh
 }
