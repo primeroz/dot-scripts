@@ -9,6 +9,8 @@
 pkg.link() {
     fs.link_file "$PKG_PATH/bin/terminus" "$ELLIPSIS_HOME/bin/terminus"
 
+    fs.link_file "$PKG_PATH/bin/elktail" "$ELLIPSIS_HOME/bin/elktail"
+
     # Link package into ~/.scripts
     fs.link_file "$PKG_PATH/scripts"
 }
