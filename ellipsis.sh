@@ -18,7 +18,10 @@ pkg.link() {
 pkg.install(){
     mkdir -p $PKG_PATH/bin
     cd $PKG_PATH/bin
-    wget -O - https://github.com/jtopjian/terminus/releases/download/v0.1.0/terminus.gz | tar xvf -
+    wget -O - https://github.com/jtopjian/terminus/releases/download/v0.1.0/terminus.gz | gunzip > terminus
+    chmod 755 terminus
+
+
 }
 
 ##############################################################################
