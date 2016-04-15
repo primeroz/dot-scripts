@@ -7,18 +7,21 @@
 ##############################################################################
 
 pkg.link() {
+    fs.link_file "$PKG_PATH/bin/terminus" "$ELLIPSIS_HOME/bin/terminus"
+
     # Link package into ~/.scripts
     #fs.link_file "$PKG_PATH"
-    #fs.link_file "$PKG_PATH" "$ELLIPSIS_HOME/.config/i3"
-    exit 0
 }
 
 ##############################################################################
 
 pkg.install(){
+
     mkdir -p $PKG_PATH/bin
+
+    # Install Terminus
     cd $PKG_PATH/bin
-    wget -O - https://github.com/jtopjian/terminus/releases/download/v0.1.0/terminus.gz | gunzip > terminus
+    wget -q -O - https://github.com/jtopjian/terminus/releases/download/v0.1.0/terminus.gz | gunzip -q > terminus
     chmod 755 terminus
 
 
@@ -29,7 +32,7 @@ pkg.install(){
 pkg.pull(){
 
     # Update dot-i3 repo
-    #git.pull
+    #iit.pull
 
     # Update the config file
     #$PKG_PATH/compile.sh
