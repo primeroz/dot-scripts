@@ -10,7 +10,7 @@ pkg.link() {
     fs.link_file "$PKG_PATH/bin/terminus" "$ELLIPSIS_HOME/bin/terminus"
 
     # Link package into ~/.scripts
-    #fs.link_file "$PKG_PATH"
+    fs.link_file "$PKG_PATH/scripts"
 }
 
 ##############################################################################
@@ -24,6 +24,10 @@ pkg.install(){
     wget -q -O - https://github.com/jtopjian/terminus/releases/download/v0.1.0/terminus.gz | gunzip -q > terminus
     chmod 755 terminus
 
+    # Install ELKTail
+    cd $PKG_PATH/bin
+    wget -q -O - https://github.com/knes1/elktail/releases/download/v0.1.4/elktail_linux_amd64.tar.gz | tar xzf -
+    chmod 755 elktail
 
 }
 
