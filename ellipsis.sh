@@ -36,11 +36,10 @@ pkg.install(){
 pkg.pull(){
 
     # Update dot-i3 repo
-    #iit.pull
+    git.pull
 
     # Update the config file
     #$PKG_PATH/compile.sh
-    exit 0
 }
 
 ##############################################################################
