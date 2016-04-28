@@ -7,6 +7,7 @@ DEBUG=${DEBUG:=0}
 
 TERMINUS_VERSION="0.1.0"
 ELKTAIL_VERSION="0.1.4"
+SHELL2HTTP_VERSION="1.4"
 
 
 ### FUNCTIONS ###
@@ -50,7 +51,13 @@ function install_elktail {
     chmod 755 elktail
 }
 
-
+function install_shell2http {
+    cd $WORKING
+    wget -q -O shell2http.zip https://github.com/msoap/shell2http/releases/download/${SHELL2HTTP_VERSION}/shell2http-${SHELL2HTTP_VERSION}.amd64.linux.zip
+    unzip shell2http.zip >/dev/null 2>&1
+    rm -f shell2http.zip README.md LICENSE
+    chmod 755 shell2http
+}
 
 ### MAIN ###
 
