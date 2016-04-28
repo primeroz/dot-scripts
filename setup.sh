@@ -64,4 +64,5 @@ function install_shell2http {
 start_build
 install_terminus
 install_elktail
+install_shell2http
 
